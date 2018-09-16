@@ -1,0 +1,2 @@
+# ZGLyricDecoder
+本软件用于将酷狗krc、QQ音乐lrc歌词解密为原始的lrc文件
