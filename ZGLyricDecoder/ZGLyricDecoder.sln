@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZGLyricDecoder", "ZGLyricDecoder.vcxproj", "{463D6129-8183-4D4A-8125-611D74C0C7EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Debug|x64.ActiveCfg = Debug|x64
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Debug|x64.Build.0 = Debug|x64
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Debug|x86.ActiveCfg = Debug|Win32
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Debug|x86.Build.0 = Debug|Win32
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Release|x64.ActiveCfg = Release|x64
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Release|x64.Build.0 = Release|x64
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Release|x86.ActiveCfg = Release|Win32
+		{463D6129-8183-4D4A-8125-611D74C0C7EB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FA5D4D5-B556-4EDB-9D19-1A2E1549B79E}
+	EndGlobalSection
+EndGlobal
