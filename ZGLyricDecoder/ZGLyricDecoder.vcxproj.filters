@@ -66,6 +66,9 @@
     <ClInclude Include="zlib\zutil.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="aerosubc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZGLyricDecoder.cpp">
@@ -141,5 +144,8 @@
     <Image Include="res\ZGLyricDecoder.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="AeroGlassGDI.lib" />
   </ItemGroup>
 </Project>
