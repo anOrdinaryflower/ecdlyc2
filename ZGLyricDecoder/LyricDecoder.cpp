@@ -6,11 +6,10 @@
 #include <sys/stat.h>
 #include <malloc.h>
 #include <stdlib.h>
-
 #include <string.h>
 #include <windows.h>
 
-const char key[] = {64, 71, 97, 119, 94, 50, 116, 71, 81, 54, 49, 45, 206, 210,110, 105};
+const char key[] = {(char)64, (char)71, (char)97, (char)119, (char)94, (char)50, (char)116, (char)71, (char)81, (char)54, (char)49, (char)45,(char)206, (char)210,(char)110, (char)105};
 
 unsigned char QQKey1[] = { 0x21, 0x40, 0x23, 0x29, 0x28, 0x4E, 0x48, 0x4C, 0x69, 0x75, 0x79, 0x2A, 0x24, 0x25, 0x5E, 0x26 };
 unsigned char QQKey2[] = { 0x31, 0x32, 0x33, 0x5A, 0x58, 0x43, 0x21, 0x40, 0x23, 0x29, 0x28, 0x2A, 0x24, 0x25, 0x5E, 0x26 };
@@ -18,7 +17,8 @@ unsigned char QQKey3[] = { 0x21, 0x40, 0x23, 0x29, 0x28, 0x2A, 0x24, 0x25, 0x5E,
 typedef int(*QQdes)(unsigned char *, unsigned char *, int);
 typedef int(*QQDdes)(unsigned char *, unsigned char *, int);
 typedef int(*QQUncompressCommon)(unsigned char *, unsigned long *, unsigned char const *, unsigned long);
-
+unsigned char * left(unsigned char *dst, unsigned char *src, int n);
+int _ustrlen(unsigned char *s);
 FileNode krcdecode(char *src,int src_len) {
 	if (!src) return {};
 	if (memcmp(src, "krc1", 4) != 0) return {};
@@ -48,6 +48,36 @@ FileNode qrcdecode(char *src, int src_len) {
 	unsigned char *result = (unsigned char *)malloc(out_len);
 	if (Z_OK != uncompress(result, out_lenp, (const Bytef*)(src + 11), src_len - 11)) return {};
 	result[out_len] = '\0';
+	int con=0;
+	short con_ = 0;
+		goback:
+	while (con[result] != '\n')
+		*++result;
+	*++result;
+	con_++;
+	if(con_!=5)
+	goto goback;
 	FreeLibrary(hDLL);
+	con = _ustrlen(result);
+	while (con[result] != ')'){
+		con[result] = '\0';
+			con--;
+	}
 	return FileNode((char *)result,out_len,true);
+}
+unsigned char * left(unsigned char *dst, unsigned char *src, int n)
+{
+	unsigned	char *p = src;
+	unsigned	char *q = dst;
+	int len = _ustrlen(src);
+	if (n > len) n = len;
+	while (n--) *(q++) = *(p++);
+	*(q++) = '\0'; 
+	return dst;
+}
+int _ustrlen(unsigned char *s) {
+	int v=0;
+	while (v[s] != '\0')
+		v++;
+	return v;
 }

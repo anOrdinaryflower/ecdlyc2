@@ -141,7 +141,7 @@
     <None Include="QQMusicCommon.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\ZGLyricDecoder.ico">
+    <Image Include="icon1.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
