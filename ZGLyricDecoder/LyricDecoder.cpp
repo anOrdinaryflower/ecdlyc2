@@ -55,9 +55,21 @@ FileNode qrcdecode(char *src, int src_len) {
 		*++result;
 	*++result;
 	con_++;
-	if(con_!=5)
+	if(con_!=4)
 	goto goback;
 	FreeLibrary(hDLL);
+
+	con = 0;
+while (con[result] != '[') {
+		con[result] = '\0';
+		con++;
+	}
+con = _ustrlen(result);
+	while (con[result] != ')') {
+		con[result] = '\0';
+		con--;
+	}
+
 	con = _ustrlen(result);
 	while (con[result] != ')'){
 		con[result] = '\0';
